@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="molecule-depictor",
+    name="mol_depict",
     version="1.0.0",
     author="",
     author_email="",
     description="A Python library",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.ibm.com/LUM/molecule-depictor",
+    url="https://github.com/DS4SD/MolDepictor",
     packages=setuptools.find_packages(exclude=["tests.*", "tests"]),
     classifiers=[
         "Development Status :: 1 - Planning",
