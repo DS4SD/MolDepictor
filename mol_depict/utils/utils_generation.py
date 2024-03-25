@@ -58,7 +58,7 @@ def get_abbreviations(generation = True):
 def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = False, filtered_evaluation = False):
     abbreviations_smiles_mapping = {}
     if (benchmark_dataset == "uspto-10k-abb") or generation:
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/uspto-10k-abb_abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/uspto-10k-abb_abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 if abbreviation not in abbreviations_smiles_mapping.keys():
@@ -70,7 +70,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
                     abbreviations_smiles_mapping[abbreviation]["population"] += smiles["population"]
 
     if (benchmark_dataset == "uspto") or (benchmark_dataset == "jpo") or generation:
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/uspto_abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/uspto_abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 if abbreviation not in abbreviations_smiles_mapping.keys():
@@ -82,7 +82,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
                     abbreviations_smiles_mapping[abbreviation]["population"] += smiles["population"]
     
     if (benchmark_dataset == "clef") or generation:
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/clef_abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/clef_abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 if abbreviation not in abbreviations_smiles_mapping.keys():
@@ -94,7 +94,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
                     abbreviations_smiles_mapping[abbreviation]["population"] += smiles["population"]
     
     if (benchmark_dataset == "jpo") or generation:
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/jpo_abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/jpo_abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 if abbreviation not in abbreviations_smiles_mapping.keys():
@@ -107,7 +107,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
     
     if ((filtered_evaluation == False) and (benchmark_dataset == "clef")) or (benchmark_dataset == None) or generation: 
         # Markush Structures Abbreviations
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/rgroups_abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/rgroups_abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 smiles["smiles"] = smiles["smiles"][:2] # Remove CXSMILES
@@ -119,7 +119,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
 
     if (benchmark_dataset == "curated") or (benchmark_dataset == None) or generation:
         # Manually Curated Abbreviations
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/abbreviations.json", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
             for abbreviation, smiles in abbreviations_smiles.items():
                 if abbreviation not in abbreviations_smiles_mapping.keys():
@@ -130,7 +130,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
     """
     if generation:
         # OSRA
-        with open(os.path.dirname(__file__) + "/../../data/abbreviations/superatom.txt", "r") as file:
+        with open(os.path.dirname(__file__) + "/../data/abbreviations/superatom.txt", "r") as file:
             for line in file.readlines():
                 line = line.strip()
                 if (len(line) < 2) or (line[0] == "#"):

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="molecule-depictor",
-    version="0.0.1",
+    version="1.0.0",
     author="",
     author_email="",
     description="A Python library",
@@ -24,5 +24,7 @@ setuptools.setup(
     ],
     python_requires='>=3.7',
     install_requires=[
-    ]
+		"shapely"
+    ],
+    package_data={"": ["*.json", "*.txt", "*.csv", "*.smi"]},
 )
