@@ -117,7 +117,7 @@ def get_abbreviations_smiles_mapping(benchmark_dataset = None, generation = Fals
                         "population": smiles["population"]
                     }
 
-    if (benchmark_dataset == "curated") or (benchmark_dataset == None) or generation:
+    if (benchmark_dataset == "curated") or (benchmark_dataset == None) or (abbreviations_smiles_mapping == {}) or generation:
         # Manually Curated Abbreviations
         with open(os.path.dirname(__file__) + "/../data/abbreviations/abbreviations.json", "r") as file:
             abbreviations_smiles = json.load(file)
