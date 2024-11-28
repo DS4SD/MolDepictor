@@ -68,7 +68,7 @@ class RDKitGenerator:
     
     def set_default_drawing_options(self):
         #For debugging, the seed can be set.
-        #self.options.fontFile = '/data/lum/molecule-depictor/mol_depict/generation/../../external/rdkit/Data/Fonts/lora.ttf'
+        #self.options.fontFile = os.path.dirname(__file__) + "/../../external/rdkit/Data/Fonts/lora.ttf"
         self.options.setAtomPalette({17: (0, 0, 0)})
         self.options.rotate = 0
         self.options.comicMode = False
