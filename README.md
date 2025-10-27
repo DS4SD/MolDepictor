@@ -24,9 +24,13 @@ Please refer to installation instructions of [MolGrapher](https://github.com/DS4
 
 ### Example of molecule augmentations 
 
+<br>
+
 <img src="assets/molecule.png" width="800">
 
 ### Example of rendering augmentations 
+
+<br>
 
 <img src="assets/rendering.png" width="800">
 
